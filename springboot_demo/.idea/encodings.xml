@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/src/main/resources/application-dev.yml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/client/src/main/resources/application-prod.yml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/client/src/main/resources/application-test.yml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/client/src/main/resources/application.yml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/client2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/src/main/resources/application-dev.yml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/eureka/src/main/resources/application.yml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/zuul" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

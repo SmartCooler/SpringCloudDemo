@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: CLIENT2
+  datasource:
+    url: jdbc:mysql://localhost:3306/ssmdemo?characterEncoding=utf-8&useUnicode=true&useSSL=true&serverTimezone=UTC
+    username: root
+    password: admin
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  type-aliases-package: com.springboot.service.user.pojo
+  #  mapper-locations: classpath*:/mapping/**/*Mapper.xml,classpath*:/mapping/**/CommonSQL.xml
+  mapper-locations: classpath*:/mapping/**/*Mapper.xml,classpath*:/mapping/sql/CommonSQL.xml
+#  mapper-locations: classpath*:/mapping/**/*.xml
+
+server:
+  port: 8082
+  context-path: /client2
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    preferIpAddress: true
+    health-check-url: http://${eureka.instance.hostname}:${server.port}${server.context-path}/actuator/health
+    status-page-url: http://${eureka.instance.hostname}:${server.port}${server.context-path}/actuator/info
+    home-page-url: http://${eureka.instance.hostname}:${server.port}${server.context-path}
+    metadata-map:
+      configPath: ${server.context-path}
+      management:
+        context-path: ${server.context-path}
+
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:6001/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000

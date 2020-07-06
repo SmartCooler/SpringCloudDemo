@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: MICRO_ZUUL
+
+server:
+  port: 6002
+  context-path: /micro_zuul
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    preferIpAddress: true
+    health-check-url: http://${eureka.instance.hostname}:${server.port}${server.context-path}/actuator/health
+    status-page-url: http://${eureka.instance.hostname}:${server.port}${server.context-path}/actuator/info
+    home-page-url: http://${eureka.instance.hostname}:${server.port}${server.context-path}
+    metadata-map:
+      configPath: ${server.context-path}
+      management:
+        context-path: ${server.context-path}
+
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:6001/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+zuul:
+  routes:
+    client2:
+      path: /client2/**
+      service-id: client2
+    micro_client:
+      path: /micro_client/**
+      service-id: micro_client
+
+

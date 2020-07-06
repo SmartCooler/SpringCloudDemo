@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: MICRO_EUREKA
+
+server:
+  port: 6001
+  context-path: /micro_eureka
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    preferIpAddress: true
+    health-check-url: http://${eureka.instance.hostname}:${server.port}${server.context-path}/actuator/health
+    status-page-url: http://${eureka.instance.hostname}:${server.port}${server.context-path}/actuator/info
+    home-page-url: http://${eureka.instance.hostname}:${server.port}${server.context-path}
+    metadata-map:
+      configPath: ${server.context-path}
+      management:
+        context-path: ${server.context-path}
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    register-with-eureka: false
+    fetch-registry: false
+
