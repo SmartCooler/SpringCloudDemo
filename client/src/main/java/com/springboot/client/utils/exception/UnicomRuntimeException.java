@@ -10,6 +10,7 @@ import com.springboot.client.utils.response.UnicomResponseEnums;
  **/
 
 public class UnicomRuntimeException extends RuntimeException {
+    private static final long serialVersionUID = 1L;
 
     protected String code;
     protected String msg;
