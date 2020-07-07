@@ -28,3 +28,6 @@ https://www.cnblogs.com/meiyanstar/p/12982395.html
 注意，第一次提交使用git push -u origin master，以后用 git push就可以了。不然会报错“Your branch is ahead of 'origin/master' by 1 commit.”这个错误，  解决办法就是 执行 git fetch ，然后重新提交。
 
 注意：不能随便使用git init这样也容易报错，会commit报错，而且要在变更的目录下进行命令操作，不要在最外层操作。
+
+#Idea里面的git操作
+https://blog.csdn.net/geng31/article/details/78585557
